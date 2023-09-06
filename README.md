@@ -1,3 +1,3 @@
 # Frontend Mentor - Newsletter sign-up form with success message
 
-![Design preview for the Newsletter sign-up form with success message coding challenge](./image.png)
+![My project for Frontend Mentor](./image.png)
