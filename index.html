@@ -42,10 +42,10 @@
   
       <div class="email">
         <p>Email address</p>
-        <input type="text" placeholder="email@company.com">
+        <input type="text" placeholder="email@company.com" id="email">
       </div>
   
-      <button>Subscribe to monthly newsletter</button>
+      <button type="button" id="subscribe">Subscribe to monthly newsletter</button>
     </div>
 
     <div class="right">
@@ -53,24 +53,43 @@
     </div>
 
     <!-- Sign-up form end -->
+  </div>
+  <!-- Success message start -->
 
-    <!-- Success message start -->
+  <div class="modal" style="display: none;">
+    <div class="modal-content">
+      <p>Thanks for subscribing!</p>
 
-    <div class="modal" style="display: none;">
-      Thanks for subscribing!
+      <p>A confirmation email has been sent to ash@loremcompany.com.</p>
+      <p>Please open it and click the button inside to confirm your subscription.</p>
 
-      A confirmation email has been sent to ash@loremcompany.com. 
-      Please open it and click the button inside to confirm your subscription.
-  
-      Dismiss message
-    </div>
-
-    <!-- Success message end -->
-    
-    <div class="attribution" style="display: none;">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      <button type="button" id="dismiss">Dismiss message</button>
     </div>
   </div>
+
+  <!-- Success message end -->
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/kayraegek18">Kayega</a>.
+  </div>
+  <script>
+    let email = document.getElementById('email');
+    let subscribe = document.getElementById('subscribe');
+    let dismiss = document.getElementById('dismiss');
+
+    subscribe.addEventListener('click', () => {
+      if (email.value === '') {
+        alert('Please enter your email address');
+      } else if (!email.value.includes('@')) {
+        alert('Please enter a valid email address');
+      } else {
+        document.querySelector('.modal').style.display = 'flex';
+      }
+    });
+
+    dismiss.addEventListener('click', () => {
+      document.querySelector('.modal').style.display = 'none';
+    });
+  </script>
 </body>
 </html>
