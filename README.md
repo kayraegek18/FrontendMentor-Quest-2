@@ -1,4 +1,4 @@
 # Frontend Mentor - Newsletter sign-up form with success message
 
-![My project for Frontend Mentor](./home.png)
-![My project for Frontend Mentor](./withmodal.png)
+![My project for Frontend Mentor](./31.png)
+![My project for Frontend Mentor](./31.png)
