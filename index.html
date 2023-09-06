@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-  <div class="card">
+  <div class="card" id="card">
     <!-- Sign-up form start -->
 
     <div class="left">
@@ -58,12 +58,23 @@
 
   <div class="modal" style="display: none;">
     <div class="modal-content">
-      <p>Thanks for subscribing!</p>
+      <div class="up">
+        <img src="./assets/images/icon-success.svg" alt="success">
+      </div>
+      <div class="down">
+        <div class="title">
+          <p>Thanks for subscribing!</p>
+        </div>
 
-      <p>A confirmation email has been sent to ash@loremcompany.com.</p>
-      <p>Please open it and click the button inside to confirm your subscription.</p>
+        <div class="subtitle">
+          <p>A confirmation email has been sent to <b id="mail">ash@loremcompany.com</b>.</p>
+          <p>Please open it and click the button inside to confirm your subscription.</p>
+        </div>
 
-      <button type="button" id="dismiss">Dismiss message</button>
+        <div class="buttons">
+          <button type="button" id="dismiss">Dismiss message</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -76,6 +87,9 @@
     let email = document.getElementById('email');
     let subscribe = document.getElementById('subscribe');
     let dismiss = document.getElementById('dismiss');
+    let card = document.getElementById('card');
+    let mail = document.getElementById('mail');
+    let modal = document.querySelector('.modal');
 
     subscribe.addEventListener('click', () => {
       if (email.value === '') {
@@ -83,12 +97,15 @@
       } else if (!email.value.includes('@')) {
         alert('Please enter a valid email address');
       } else {
-        document.querySelector('.modal').style.display = 'flex';
+        mail.innerHTML = email.value;
+        modal.style.display = 'flex';
+        card.style.display = 'none';
       }
     });
 
     dismiss.addEventListener('click', () => {
-      document.querySelector('.modal').style.display = 'none';
+      modal.style.display = 'none';
+      card.style.display = 'flex';
     });
   </script>
 </body>
